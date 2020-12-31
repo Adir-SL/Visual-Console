@@ -61,27 +61,27 @@ function toVConsole(y){
 }
 
 function addConsole(){
-    document.body.innerHTML += "<div class='vconsole' id='vconsole_"+window.checkTime+"'></div>";
-    consoleV = document.getElementById("vconsole_"+window.checkTime).style;
-    consoleV.borderRadius = "8px";
-    consoleV.position = "absolute";
-    consoleV.top = "16px";
-    consoleV.right = "16px";
-    consoleV.width = "300px";
-    consoleV.maxWidth = "50%";
-    consoleV.height = "150px";
-    consoleV.maxHeight = "25%";
-    consoleV.padding = "16px";
-    consoleV.overflow = "auto";
-    consoleV.scrollBehavior = "smooth";
-    consoleV.backgroundColor = "#ffffff";
-    consoleV.boxShadow = "0 4px 16px 0 rgba(0,0,0,.4)";
-    consoleV.fontFamily = "sans-serif";
+    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'></div>";
+    // consoleV = document.getElementById("vconsole_"+window.checkTime).style;
+    // consoleV.borderRadius = "8px";
+    // consoleV.position = "absolute";
+    // consoleV.top = "16px";
+    // consoleV.right = "16px";
+    // consoleV.width = "300px";
+    // consoleV.maxWidth = "50%";
+    // consoleV.height = "150px";
+    // consoleV.maxHeight = "25%";
+    // consoleV.padding = "16px";
+    // consoleV.overflow = "auto";
+    // consoleV.scrollBehavior = "smooth";
+    // consoleV.backgroundColor = "#ffffff";
+    // consoleV.boxShadow = "0 4px 16px 0 rgba(0,0,0,.4)";
+    // consoleV.fontFamily = "sans-serif";
 }
 
 //CSS
 const addCSS = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-addCSS("body{ background:red; }")
+addCSS("#vconsole_"+window.checkTime+"{ position:absolute; right:16px; top:16px; width:300px; max-width:50%; height:150px; max-height:25%; padding:16px; overflow:auto; scroll-behavior:smooth; background-color:#ffffff; box-shadow:0 4px 16px 0 rgba(0,0,0,.4); font-family:sans-serif; border-radius: 8px; }")
 
 
 window.checkTime = new Date().valueOf();
