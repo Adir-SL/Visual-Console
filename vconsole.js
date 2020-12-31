@@ -6,7 +6,7 @@ console.log = function(){
     console.defaultLog.apply(console, arguments);
     // new & array data
     console.logs.push(Array.from(arguments));
-    toVConsole(Array.from(arguments));
+    toVConsole("<div class='vconlog'>" + Array.from(arguments) + "/div>");
 }
 
 // error
@@ -17,7 +17,7 @@ console.error = function(){
     console.defaultError.apply(console, arguments);
     // new & array data
     console.errors.push(Array.from(arguments));
-    toVConsole(Array.from(arguments));
+    toVConsole("<div class='vconerror'>" + Array.from(arguments) + "/div>");
 }
 
 // warn
@@ -28,7 +28,8 @@ console.warn = function(){
     console.defaultWarn.apply(console, arguments);
     // new & array data
     console.warns.push(Array.from(arguments));
-    toVConsole(Array.from(arguments));
+    // toVConsole(Array.from(arguments));
+    toVConsole("<div class='vconwarn'>" + Array.from(arguments) + "/div>");
 }
 
 // debug
@@ -39,7 +40,7 @@ console.debug = function(){
     console.defaultDebug.apply(console, arguments);
     // new & array data
     console.debugs.push(Array.from(arguments));
-    toVConsole(Array.from(arguments));
+    toVConsole("<div class='vcondebug'>" + Array.from(arguments) + "/div>");
 }
 
 // clear
@@ -56,7 +57,7 @@ function alert(x){
 }
 
 function toVConsole(y){
-    document.getElementById("vconsole_"+window.checkTime).innerHTML += "<div class='vconlog'>" + y + "</div>";
+    document.getElementById("vconsole_"+window.checkTime).innerHTML += y;
     document.getElementById("vconsole_"+window.checkTime).scrollTop = document.getElementById("vconsole_"+window.checkTime).scrollHeight;
 }
 
@@ -73,15 +74,15 @@ function addConsole(){
     
     //Errors CSS
     const ErrorStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    ErrorStyles(".vconlog{ background-color:red; }")
+    ErrorStyles(".vconerror{ background-color:red; }")
 
     //Warn CSS
     const WarnStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    WarnStyles(".vconlog{ background-color:yellow; }")
+    WarnStyles(".vconwarn{ background-color:yellow; }")
 
     //Debug CSS
     const DebugStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    DebugStyles(".vconlog{ background-color:orange; }")
+    DebugStyles(".vcondebug{ background-color:orange; }")
 }
 
 
