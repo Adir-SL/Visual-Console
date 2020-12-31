@@ -6,7 +6,7 @@ console.log = function(){
     console.defaultLog.apply(console, arguments);
     // new & array data
     console.logs.push(Array.from(arguments));
-    toVConsole("<div class='vconlog'>" + Array.from(arguments) + "/div>");
+    toVConsole("<div class='vconlog'>" + Array.from(arguments) + "</div>");
 }
 
 // error
@@ -17,7 +17,7 @@ console.error = function(){
     console.defaultError.apply(console, arguments);
     // new & array data
     console.errors.push(Array.from(arguments));
-    toVConsole("<div class='vconerror'>" + Array.from(arguments) + "/div>");
+    toVConsole("<div class='vconerror'>" + Array.from(arguments) + "</div>");
 }
 
 // warn
@@ -29,7 +29,7 @@ console.warn = function(){
     // new & array data
     console.warns.push(Array.from(arguments));
     // toVConsole(Array.from(arguments));
-    toVConsole("<div class='vconwarn'>" + Array.from(arguments) + "/div>");
+    toVConsole("<div class='vconwarn'>" + Array.from(arguments) + "</div>");
 }
 
 // debug
@@ -40,7 +40,7 @@ console.debug = function(){
     console.defaultDebug.apply(console, arguments);
     // new & array data
     console.debugs.push(Array.from(arguments));
-    toVConsole("<div class='vcondebug'>" + Array.from(arguments) + "/div>");
+    toVConsole("<div class='vcondebug'>" + Array.from(arguments) + "</div>");
 }
 
 // clear
@@ -54,7 +54,7 @@ console.clear = function(){
 // alert
 function alert(x){
     // console.log("ALERT: "+x);
-    toVConsole("<div class='vconalert'>" + x + "/div>");
+    toVConsole("<div class='vconalert'>" + x + "</div>");
 }
 
 function toVConsole(y){
