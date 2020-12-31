@@ -79,7 +79,7 @@ function addConsole(){
 
     //Warn CSS
     const WarnStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    WarnStyles(".vconwarn{ border-bottom:2px solid yellow; }")
+    WarnStyles(".vconwarn{ border-bottom:2px solid gold; }")
 
     //Debug CSS
     const DebugStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
