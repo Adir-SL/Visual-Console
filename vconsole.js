@@ -53,7 +53,8 @@ console.clear = function(){
 
 // alert
 function alert(x){
-    console.log("ALERT: "+x);
+    // console.log("ALERT: "+x);
+    toVConsole("<div class='vconalert'>" + x + "/div>");
 }
 
 function toVConsole(y){
@@ -83,6 +84,10 @@ function addConsole(){
     //Debug CSS
     const DebugStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
     DebugStyles(".vcondebug{ background-color:orange; }")
+
+    //Alert CSS
+    const AlertStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
+    AlertStyles(".vconalert{ background-color:pink; }")
 }
 
 
