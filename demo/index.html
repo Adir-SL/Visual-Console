@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script>
+        window.logNumber=1;
+        window.warnNumber=1;
+        window.errorNumber=1;
+    </script>
+</head>
+<body>
+    <button onclick="console.log('Log Number: #'+window.logNumber);window.logNumber+=1;">Log Me</button>
+    <button onclick="console.warn('Warning: #'+window.warnNumber);window.warnNumber+=1;">Warn Me</button>
+    <button onclick="console.error('Error: #'+window.errorNumber);window.errorNumber+=1;">Error Me</button>
+    <button onclick="console.clear();">CLEAR</button>
+    <button onclick="alert('TEST');">ALERT</button>
+    <script src="vconsole.js"></script>
+</body>
+</html>
