@@ -1,4 +1,3 @@
-import styles from "https://adir-sl.github.io/Visual-Console/styles.css";
 // logs
 console.defaultLog = console.log.bind(console);
 console.logs = [];
@@ -79,5 +78,11 @@ function addConsole(){
     consoleV.boxShadow = "0 4px 16px 0 rgba(0,0,0,.4)";
     consoleV.fontFamily = "sans-serif";
 }
+
+//CSS
+const addCSS = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
+addCSS("body{ background:red; }")
+
+
 window.checkTime = new Date().valueOf();
 addConsole();
