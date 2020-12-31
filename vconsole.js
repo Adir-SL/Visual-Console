@@ -71,23 +71,23 @@ function addConsole(){
 
     //Logs CSS
     const LogStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    LogStyles(".vconlog{ background-color:skyblue; }")
+    LogStyles(".vconlog{ border-bottom:skyblue; }")
     
     //Errors CSS
     const ErrorStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    ErrorStyles(".vconerror{ background-color:red; }")
+    ErrorStyles(".vconerror{ border-bottom:red; }")
 
     //Warn CSS
     const WarnStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    WarnStyles(".vconwarn{ background-color:yellow; }")
+    WarnStyles(".vconwarn{ border-bottom:yellow; }")
 
     //Debug CSS
     const DebugStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    DebugStyles(".vcondebug{ background-color:orange; }")
+    DebugStyles(".vcondebug{ border-bottom:orange; }")
 
     //Alert CSS
     const AlertStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    AlertStyles(".vconalert{ background-color:pink; }")
+    AlertStyles(".vconalert{ border-bottom:pink; }")
 }
 
 
