@@ -1,3 +1,4 @@
+import styles from "https://adir-sl.github.io/Visual-Console/styles.css";
 // logs
 console.defaultLog = console.log.bind(console);
 console.logs = [];
@@ -61,7 +62,7 @@ function toVConsole(y){
 }
 
 function addConsole(){
-    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'></div>";
+    document.body.innerHTML += "<div class='vconsole' id='vconsole_"+window.checkTime+"'></div>";
     consoleV = document.getElementById("vconsole_"+window.checkTime).style;
     consoleV.borderRadius = "8px";
     consoleV.position = "absolute";
