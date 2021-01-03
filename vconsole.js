@@ -63,11 +63,11 @@ function toVConsole(y){
 }
 
 function addConsole(){
-    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'></div>";
+    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'></div><button id='vbutton"+window.checkTime+"' onclick='toggleConsole();'>X</button>";
 
     //Console CSS
     const ConsoleStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    ConsoleStyles("#vconsole_"+window.checkTime+"{ position:absolute; right:16px; top:16px; width:300px; max-width:50%; height:150px; max-height:25%; padding:16px; overflow:auto; scroll-behavior:smooth; background-color:#ffffff; box-shadow:0 4px 16px 0 rgba(0,0,0,.4); font-family:sans-serif; border-radius: 8px; }"+"#vconsole_"+window.checkTime+" div{ margin-bottom:4px; }")
+    ConsoleStyles("#vconsole_"+window.checkTime+"{ position:absolute; right:16px; top:16px; width:300px; max-width:50%; height:150px; max-height:25%; padding:8px; overflow:auto; scroll-behavior:smooth; background-color:#ffffff; box-shadow:0 4px 16px 0 rgba(0,0,0,.4); font-family:sans-serif; border-radius: 8px;transition:width 200ms ease-in-out, height 200ms ease-in-out, opacity 200ms ease-in-out, background-color 200ms ease-in-out, box-shadow 200ms ease-in-out; }"+"#vconsole_"+window.checkTime+" div{ margin-bottom:4px; padding:8px; border-radius:8px; background-color:#ededed; }"+"#vbutton"+window.checkTime+"{ position:fixed; right:32px; top:32px; width: 32px; height:32px; border:none; outline:none; background-color:skyblue; color:#ffffff; font-weight:bold; border-radius:50%; cursor:pointer; box-shadow:0 4px 8px 0 rgba(0,0,0,.4); }")
 
     //Logs CSS
     const LogStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
@@ -89,7 +89,26 @@ function addConsole(){
     const AlertStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
     AlertStyles(".vconalert{ border-bottom:2px solid pink; }")
 }
-
+function toggleConsole(){
+    if(window.hideConsole != true){
+        document.getElementById('vconsole_'+window.checkTime).style.width = '48px';
+        document.getElementById('vconsole_'+window.checkTime).style.height = '48px';
+        document.getElementById('vconsole_'+window.checkTime).style.backgroundColor = 'transparent';
+        document.getElementById('vconsole_'+window.checkTime).style.boxShadow = '0 4px 16px 0 rgba(0,0,0,0)';
+        document.getElementById('vconsole_'+window.checkTime).style.opacity = 0;
+        window.hideConsole = true;
+    }else{
+        document.getElementById('vconsole_'+window.checkTime).style.width = '300px';
+        document.getElementById('vconsole_'+window.checkTime).style.height = '150px';
+        document.getElementById('vconsole_'+window.checkTime).style.backgroundColor = '#ffffff';
+        document.getElementById('vconsole_'+window.checkTime).style.boxShadow = '0 4px 16px 0 rgba(0,0,0,.4)';
+        document.getElementById('vconsole_'+window.checkTime).style.opacity = 1;
+        window.hideConsole = false;
+        setTimeout(function(){ 
+            document.getElementById("vconsole_"+window.checkTime).scrollTop = document.getElementById("vconsole_"+window.checkTime).scrollHeight;
+        }, 300);
+    }
+}
 
 window.checkTime = new Date().valueOf();
 addConsole();

@@ -11,12 +11,15 @@
     </script>
 </head>
 <body>
+    <textarea placeholder="Insert Console Log Here"></textarea><button onclick="console.log(document.getElementsByTagName('textarea')[0].value);">Send Log</button>
+    <br/><br/>
     <button onclick="console.log('Log Number: #'+window.logNumber);window.logNumber+=1;">Log Me</button>
     <button onclick="console.warn('Warning: #'+window.warnNumber);window.warnNumber+=1;">Warn Me</button>
     <button onclick="console.error('Error: #'+window.errorNumber);window.errorNumber+=1;">Error Me</button>
     <button onclick="console.debug('Debug: #'+window.errorNumber);window.errorNumber+=1;">Debug Me</button>
     <button onclick="console.clear();">CLEAR</button>
     <button onclick="alert('TEST');">ALERT</button>
-    <script src="https://adir-sl.github.io/Visual-Console/vconsole.js"></script>
+    <!-- <script src="https://adir-sl.github.io/Visual-Console/vconsole.js"></script> -->
+    <script src="vconsole.js"></script>
 </body>
 </html>
