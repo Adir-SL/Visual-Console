@@ -59,11 +59,11 @@ function toVConsole(y){
 }
 
 function addConsole(){
-    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'><details open><summary></summary></details></div><button id='vbutton"+window.checkTime+"' onclick='toggleConsole();'>X</button>";
+    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'><details open><summary></summary></details><input spellcheck='false'></input></div><button id='vbutton"+window.checkTime+"' onclick='toggleConsole();'>X</button>";
 
     //Console CSS
     const ConsoleStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    ConsoleStyles("#vconsole_"+window.checkTime+"{ position:absolute; right:16px; top:16px; width:300px; max-width:50%; height:150px; max-height:25%; padding:8px; overflow:auto; scroll-behavior:smooth; background-color:#ffffff; box-shadow:0 4px 16px 0 rgba(0,0,0,.4); font-family:sans-serif; border-radius: 8px;transition:height 200ms ease-in-out, opacity 200ms ease-in-out; }"+"#vconsole_"+window.checkTime+" div{ margin-bottom:4px; padding:8px; border-radius:8px; background-color:#ededed; }"+"#vconsole_"+window.checkTime+" summary:empty ~ div:last-of-type{ animation:slideOver 100ms ease-out; }"+"#vbutton"+window.checkTime+"{ position:fixed; right:32px; top:32px; width: 32px; height:32px; border:none; outline:none; background-color:skyblue; color:#ffffff; font-weight:bold; border-radius:50%; cursor:pointer; box-shadow:0 4px 8px 0 rgba(0,0,0,.4); } @keyframes slideOver{ 0%{transform: translateX(-100%);} 100%{transform: translateX(0px);}}")
+    ConsoleStyles("#vconsole_"+window.checkTime+"{ position:absolute; right:16px; top:16px; width:300px; max-width:50%; height:150px; max-height:25%; padding:8px; overflow:auto; scroll-behavior:smooth; background-color:#ffffff; box-shadow:0 4px 16px 0 rgba(0,0,0,.4); font-family:sans-serif; border-radius: 8px;transition:height 200ms ease-in-out, opacity 200ms ease-in-out; }"+"#vconsole_"+window.checkTime+" div{ margin-bottom:4px; padding:8px; border-radius:8px; background-color:#ededed; }"+"#vconsole_"+window.checkTime+" summary:empty ~ div:last-of-type{ animation:slideOver 100ms ease-out; }"+"#vbutton"+window.checkTime+"{ position:fixed; right:32px; top:32px; width: 32px; height:32px; border:none; outline:none; background-color:skyblue; color:#ffffff; font-weight:bold; border-radius:50%; cursor:pointer; box-shadow:0 4px 8px 0 rgba(0,0,0,.4); } @keyframes slideOver{ 0%{transform: translateX(-100%);} 100%{transform: translateX(0px);}}"+"#vconsole_"+window.checkTime+" input{ position:fixed; top:180px; width: 284px; padding: 8px 16px; margin-top: 8px; margin-left: -8px; border-radius:8px; border:1px solid gray; outline:none; }")
 
     //Console CSS - Mobile
     const mobileStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
@@ -112,3 +112,4 @@ function toggleConsole(){
 
 window.checkTime = new Date().valueOf();
 addConsole();
+console.log('welcome');
