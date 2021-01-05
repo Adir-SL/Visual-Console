@@ -113,8 +113,8 @@ function toggleConsole(){
 window.addEventListener("keydown", function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
-      eval(document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value);
       document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value = '';
+      eval(document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value);
     }
 });
 
