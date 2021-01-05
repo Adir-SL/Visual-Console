@@ -59,7 +59,7 @@ function toVConsole(y){
 }
 
 function addConsole(){
-    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'><details open><summary></summary></details><input spellcheck='false'></input></div><button id='vbutton"+window.checkTime+"' onclick='toggleConsole();'>X</button>";
+    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'><details open><summary></summary></details><input spellcheck='false' autocapitalize='none'></input></div><button id='vbutton"+window.checkTime+"' onclick='toggleConsole();'>X</button>";
 
     //Console CSS
     const ConsoleStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
@@ -113,8 +113,8 @@ function toggleConsole(){
 window.addEventListener("keydown", function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
-      document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value = '';
       eval(document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value);
+      document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value = '';
     }
 });
 
