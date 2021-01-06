@@ -59,11 +59,11 @@ function toVConsole(y){
 }
 
 function addConsole(){
-    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'><details open><summary></summary></details><input spellcheck='false' autocapitalize='none'></input></div><button id='vbutton"+window.checkTime+"' onclick='toggleConsole();'>X</button>";
+    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'><details open><summary></summary></details></div><div class='flexDiv' id='flex_"+window.checkTime+"'><input spellcheck='false' autocapitalize='none'></input><button id="+"ibutton_"+window.checkTime+" onclick='iFunc(event);'>></button></div><button id='vbutton_"+window.checkTime+"' onclick='toggleConsole();'>X</button>";
 
     //Console CSS
     const ConsoleStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    ConsoleStyles("#vconsole_"+window.checkTime+"{ position:absolute; right:16px; top:16px; width:300px; max-width:50%; height:150px; max-height:25%; padding:8px; overflow:auto; scroll-behavior:smooth; background-color:#ffffff; box-shadow:0 4px 16px 0 rgba(0,0,0,.4); font-family:sans-serif; border-radius: 8px;transition:height 200ms ease-in-out, opacity 200ms ease-in-out; }"+"#vconsole_"+window.checkTime+" div{ margin-bottom:4px; padding:8px; border-radius:8px; background-color:#ededed; }"+"#vconsole_"+window.checkTime+" summary:empty ~ div:last-of-type{ animation:slideOver 100ms ease-out; }"+"#vbutton"+window.checkTime+"{ position:fixed; right:32px; top:32px; width: 32px; height:32px; border:none; outline:none; background-color:skyblue; color:#ffffff; font-weight:bold; border-radius:50%; cursor:pointer; box-shadow:0 4px 8px 0 rgba(0,0,0,.4); } @keyframes slideOver{ 0%{transform: translateX(-100%);} 100%{transform: translateX(0px);}}"+"#vconsole_"+window.checkTime+" input{ position:fixed; top:180px; width: 284px; padding: 8px 16px; margin-top: 8px; margin-left: -8px; border-radius:8px; border:1px solid gray; outline:none; }")
+    ConsoleStyles("#vconsole_"+window.checkTime+"{ position:absolute; right:16px; top:16px; width:300px; max-width:50%; height:150px; max-height:25%; padding:8px; overflow:auto; scroll-behavior:smooth; background-color:#ffffff; box-shadow:0 4px 16px 0 rgba(0,0,0,.4); font-family:sans-serif; border-radius: 8px;transition:height 200ms ease-in-out, opacity 200ms ease-in-out; }"+"#vconsole_"+window.checkTime+" div{ margin-bottom:4px; padding:8px; border-radius:8px; background-color:#ededed; }"+"#vconsole_"+window.checkTime+" summary:empty ~ div:last-of-type{ animation:slideOver 100ms ease-out; }"+"#vbutton_"+window.checkTime+"{ position:fixed; right:32px; top:32px; width: 32px; height:32px; border:none; outline:none; background-color:skyblue; color:#ffffff; font-weight:bold; border-radius:50%; cursor:pointer; box-shadow:0 4px 8px 0 rgba(0,0,0,.4); } @keyframes slideOver{ 0%{transform: translateX(-100%);} 100%{transform: translateX(0px);}}"+"#vconsole_"+window.checkTime+" + .flexDiv{ display:flex; align-items:stretch; position:absolute; top:180px; right:16px; width: 300px; padding: 8px; margin-top: 8px; border-radius:8px; box-shadow:0 4px 16px 0 rgba(0,0,0,.4); background-color:#ffffff; }"+"#vconsole_"+window.checkTime+" + .flexDiv input{ width:100%; border-radius:8px; padding: 8px 16px; border:1px solid gray; outline:none;margin-right:8px; }")
 
     //Console CSS - Mobile
     const mobileStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
@@ -110,7 +110,8 @@ function toggleConsole(){
     }
 }
 function runCode(r){
-    document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value = '';
+    // document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value = '';
+    document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value = '';
     eval(r);
 }
 
@@ -118,10 +119,17 @@ window.addEventListener("keydown", function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         // eval(document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value);
-        runCode(document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value);
+        // runCode(document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value);
+        runCode(document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value);
         // document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("input")[0].value = '';
     }
 });
+
+function iFunc(e){
+    if(e.target.parentNode.getElementsByTagName('input')[0].value !== ''){
+        runCode(e.target.parentNode.getElementsByTagName('input')[0].value);
+    }
+}
 
 window.checkTime = new Date().valueOf();
 addConsole();
