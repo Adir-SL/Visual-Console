@@ -136,4 +136,4 @@ function iFunc(e){
 
 window.checkTime = new Date().valueOf();
 addConsole();
-console.log('welcome');
+console.log('Hello World!');
