@@ -67,7 +67,7 @@ function addConsole(){
 
     //Console CSS - Mobile
     const mobileStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    mobileStyles("@media only screen and (max-width: 990px) {#vconsole_"+window.checkTime+"{ width:calc(100% - 48px); max-width:calc(100% - 48px); } "+"#vbutton"+window.checkTime+"{ right:20px; top:20px; }"+"}")
+    mobileStyles("@media only screen and (max-width: 990px) {#vconsole_"+window.checkTime+"{ width:calc(100% - 48px); max-width:calc(100% - 48px); } "+"#vbutton"+window.checkTime+"{ right:20px; top:20px; }"+"#vconsole_"+window.checkTime+" + .flexDiv{ width:calc(100% - 48px); }"+"}")
 
     //Logs CSS
     const LogStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
