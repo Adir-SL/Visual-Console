@@ -126,6 +126,11 @@ window.addEventListener("keydown", function (event) {
         event.preventDefault();
         runCode(document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value);
     }
+    if (event.keyCode === 192) {
+        event.preventDefault();
+        // alert("~");
+        toggleConsole();
+    }
 });
 
 function iFunc(e){
