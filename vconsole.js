@@ -60,7 +60,7 @@ function toVConsole(y){
 
 function addConsole(){
     window.chevSvgIcon = '<svg style="width:24px;height:24px;pointer-events:none;" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>';
-    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'><details open><summary></summary></details></div><div class='flexDiv' id='flex_"+window.checkTime+"'><input spellcheck='false' autocapitalize='none'></input><button id="+"ibutton_"+window.checkTime+" onclick='iFunc(event);'>"+window.chevSvgIcon+"</button></div><button id='vbutton_"+window.checkTime+"' onclick='toggleConsole();'>"+window.chevSvgIcon+"</button>";
+    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'><details open><summary></summary></details></div><div class='flexDiv' id='flex_"+window.checkTime+"'><input spellcheck='false' autocapitalize='none'></input><button id="+"ibutton_"+window.checkTime+" onclick='iFunc(event);'>"+window.chevSvgIcon+"</button></div><button id='vbutton_"+window.checkTime+"' onclick='toggleConsole();' title='~ to toggle'>"+window.chevSvgIcon+"</button>";
 
     //Console CSS
     const ConsoleStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
