@@ -128,7 +128,6 @@ window.addEventListener("keydown", function (event) {
     }
     if (event.keyCode === 192) {
         event.preventDefault();
-        // alert("~");
         toggleConsole();
     }
 });
