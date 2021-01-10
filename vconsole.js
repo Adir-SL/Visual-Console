@@ -83,7 +83,7 @@ function toVConsole(y){
     }
     document.getElementById("vconsole_"+window.checkTime).scrollTop = document.getElementById("vconsole_"+window.checkTime).scrollHeight;
 }
-fucntion checkForChars(){
+function checkForChars(){
     var x = document.getElementsByClassName("vconlog");
     var i;
     for (i = 0; i < x.length; i++) {
