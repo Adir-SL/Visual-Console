@@ -4,7 +4,7 @@ console.logs = [];
 console.log = function(){
     console.defaultLog.apply(console, arguments);
     console.logs.push(Array.from(arguments));
-    toVConsole("<div class='vconlog'>" + Array.from(arguments) + "</div>");
+    toVConsole("<div class='vconlog' title='console.log()'>" + Array.from(arguments) + "</div>");
 }
 
 // error
@@ -13,7 +13,7 @@ console.errors = [];
 console.error = function(){
     console.defaultError.apply(console, arguments);
     console.errors.push(Array.from(arguments));
-    toVConsole("<div class='vconerror'>" + Array.from(arguments) + "</div>");
+    toVConsole("<div class='vconerror' title='console.error()'>" + Array.from(arguments) + "</div>");
 }
 
 // warn
@@ -22,7 +22,7 @@ console.warns = [];
 console.warn = function(){
     console.defaultWarn.apply(console, arguments);
     console.warns.push(Array.from(arguments));
-    toVConsole("<div class='vconwarn'>" + Array.from(arguments) + "</div>");
+    toVConsole("<div class='vconwarn' title='console.warn()'>" + Array.from(arguments) + "</div>");
 }
 
 // debug
@@ -31,7 +31,7 @@ console.debugs = [];
 console.debug = function(){
     console.defaultDebug.apply(console, arguments);
     console.debugs.push(Array.from(arguments));
-    toVConsole("<div class='vcondebug'>" + Array.from(arguments) + "</div>");
+    toVConsole("<div class='vcondebug' title='console.debug()'>" + Array.from(arguments) + "</div>");
 }
 
 // clear
@@ -43,7 +43,7 @@ console.clear = function(){
 
 // alert
 function alert(x){
-    toVConsole("<div class='vconalert'>" + x + "</div>");
+    toVConsole("<div class='vconalert' title='alert()'>" + x + "</div>");
 }
 
 function toVConsole(y){
