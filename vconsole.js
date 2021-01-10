@@ -87,7 +87,7 @@ function checkForChars(){
     var x = document.getElementsByClassName("vconlog");
     var i;
     for (i = 0; i < x.length; i++) {
-        if(x[i].innerHTML.slice == "%"){
+        if(x[i].innerHTML.slice(0,1) == "%"){
             console.log("YES %");
         }
     }
