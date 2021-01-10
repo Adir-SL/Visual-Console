@@ -78,6 +78,7 @@ function toVConsole(y){
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary").length-1].innerHTML = "Cleared at "+currentdate.getHours()+":"+currentdate.getMinutes();
         document.getElementById("vconsole_"+window.checkTime).innerHTML += "<details open><summary></summary></details>";
     }else{
+        if(y.slice(0,1) == "%"){console.log("YES %");}
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details").length-1].innerHTML += y;
     }
     document.getElementById("vconsole_"+window.checkTime).scrollTop = document.getElementById("vconsole_"+window.checkTime).scrollHeight;
