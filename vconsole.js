@@ -79,7 +79,9 @@ function toVConsole(y){
         document.getElementById("vconsole_"+window.checkTime).innerHTML += "<details open><summary></summary></details>";
     }else{
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details").length-1].innerHTML += y;
-        checkForChars();
+        setTimeout(function(){ 
+            checkForChars();
+        }, 50);
     }
     document.getElementById("vconsole_"+window.checkTime).scrollTop = document.getElementById("vconsole_"+window.checkTime).scrollHeight;
 }
