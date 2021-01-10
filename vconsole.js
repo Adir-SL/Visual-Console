@@ -79,8 +79,18 @@ function toVConsole(y){
         document.getElementById("vconsole_"+window.checkTime).innerHTML += "<details open><summary></summary></details>";
     }else{
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details").length-1].innerHTML += y;
+        checkForChars();
     }
     document.getElementById("vconsole_"+window.checkTime).scrollTop = document.getElementById("vconsole_"+window.checkTime).scrollHeight;
+}
+fucntion checkForChars(){
+    var x = document.getElementsByClassName("vconlog");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        if(x[i].innerHTML.slice == "%"){
+            console.log("YES %");
+        }
+    }
 }
 
 function addConsole(){
