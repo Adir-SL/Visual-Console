@@ -90,7 +90,7 @@ function checkForChars(){
     var i;
     for (i = 0; i < x.length; i++) {
         if(x[i].innerHTML.slice(0,1) == "%"){
-            console.log("YES %");
+            x[i].innerHTML = x[i].innerHTML.slice(1,2);
         }
     }
 }
