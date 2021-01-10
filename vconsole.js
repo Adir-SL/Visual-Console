@@ -117,10 +117,12 @@ function toggleConsole(){
     }
 }
 function runCode(r){
-    document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].placeholder = 'Running...';
-    setTimeout(function(){ document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].placeholder = 'Type code here...'; }, 500);
-    document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value = '';
-    eval(r);
+    if(r !== ''){
+        document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].placeholder = 'Running...';
+        setTimeout(function(){ document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].placeholder = 'Type code here...'; }, 400);
+        document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value = '';
+        eval(r);
+    }
 }
 
 window.addEventListener("keydown", function (event) {
