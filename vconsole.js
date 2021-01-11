@@ -187,9 +187,8 @@ function iFunc(e){
 function selectFromPage(){
     //Selects an Element from Page by Clicking it.
     document.addEventListener("click", function(e) {
-        // x[i].classList.add('vConSelection');
         if(e.target.className.indexOf("vConUndetect") < 0){
-            alert(e.target);
+            window.vConSelection = e.target;
         }
       });
 }
