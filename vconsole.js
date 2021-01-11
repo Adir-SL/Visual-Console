@@ -190,6 +190,7 @@ function selectFromPage(){
     document.addEventListener("click", function(e) {
         if(e.target.className.indexOf("vConUndetect") < 0){
             window.vConSelection = e.target;
+            vcon = window.vConSelection;
             if(document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value.slice(-10) !== 'nSelection' && window.stopSelecting == 1){
                 document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value += 'window.vConSelection';
                 // window.vConSelection = '';
