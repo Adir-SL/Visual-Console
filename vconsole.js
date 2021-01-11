@@ -194,6 +194,7 @@ function selectFromPage(){
                 document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value += 'window.vConSelection';
                 window.vConSelection = '';
                 window.stopSelecting = 0;
+                document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].focus();
             }
         }
       });
