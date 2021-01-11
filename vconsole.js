@@ -97,7 +97,7 @@ function checkForChars(){
 
 function addConsole(){
     window.chevSvgIcon = '<svg style="width:24px;height:24px;pointer-events:none;" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>';
-    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"'><details open><summary></summary></details></div><div class='flexDiv' id='flex_"+window.checkTime+"'><input spellcheck='false' autocapitalize='none' placeholder='Type code here...'></input><button id="+"ibutton_"+window.checkTime+" onclick='iFunc(event);' title='Run code'>"+window.chevSvgIcon+"</button></div><button id='vbutton_"+window.checkTime+"' onclick='toggleConsole();' title='~ to toggle'>"+window.chevSvgIcon+"</button>";
+    document.body.innerHTML += "<div id='vconsole_"+window.checkTime+"' class='vConUndetect'><details open><summary></summary></details></div><div class='flexDiv vConUndetect' id='flex_"+window.checkTime+"'><input spellcheck='false' autocapitalize='none' placeholder='Type code here...'></input><button id="+"ibutton_"+window.checkTime+" onclick='iFunc(event);' title='Run code'>"+window.chevSvgIcon+"</button></div><button id='vbutton_"+window.checkTime+"' class='vConUndetect' onclick='toggleConsole();' title='~ to toggle'>"+window.chevSvgIcon+"</button>";
 
     //Console CSS
     const ConsoleStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
@@ -182,6 +182,16 @@ function iFunc(e){
     if(e.target.parentNode.getElementsByTagName('input')[0].value !== ''){
         runCode(e.target.parentNode.getElementsByTagName('input')[0].value);
     }
+}
+
+function selectFromPage(){
+    //Selects an Element from Page by Clicking it.
+    document.addEventListener("click", function(e) {
+        // x[i].classList.add('vConSelection');
+        if(e.target.className.indexOf("vConUndetect") < 0){
+            alert(e.target);
+        }
+      });
 }
 
 window.checkTime = new Date().valueOf();
