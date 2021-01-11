@@ -192,7 +192,7 @@ function selectFromPage(){
             window.vConSelection = e.target;
             if(document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value.slice(-10) !== 'nSelection' && window.stopSelecting == 1){
                 document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value += 'window.vConSelection';
-                window.vConSelection = '';
+                // window.vConSelection = '';
                 window.stopSelecting = 0;
                 document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].focus();
             }
