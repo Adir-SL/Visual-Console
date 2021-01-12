@@ -192,9 +192,20 @@ function selectFromPage(){
             if(document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value.slice(-10) !== 'nSelection' && window.stopSelecting == 1){
                 window.vConSelection = e.target;
                 vcon = e.target;
-                document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value += 'vcon';
+                if(document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value.slice(-4) !== 'vcon'){
+                    document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value += 'vcon';
+                }
                 window.stopSelecting = 0;
                 document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].focus();
+                tempShade = window.getComputedStyle(vcon).boxShadow;
+                if(tempShade == 'none'){
+                    vcon.style.boxShadow = '0 0 0 2px blue';
+                }else{
+                    vcon.style.boxShadow = '0 0 0 2px blue,' + tempShade;
+                }
+                setTimeout(function(){ 
+                    vcon.style.boxShadow = tempShade;
+                }, 300);
             }
         }
       });
