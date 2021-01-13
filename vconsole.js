@@ -176,6 +176,10 @@ window.addEventListener("keydown", function (event) {
         event.preventDefault();
         toggleConsole();
     }
+    if (event.keyCode === 72) {
+        event.preventDefault();
+        selectFromPage();
+    }
 });
 
 function iFunc(e){
@@ -187,6 +191,8 @@ function iFunc(e){
 function selectFromPage(){
     //Selects an Element from Page by Clicking it.
     window.stopSelecting = 1;
+    document.getElementById("pbutton_"+window.checkTime).style.color = "#ffffff";
+    document.getElementById("pbutton_"+window.checkTime).style.backgroundColor = "grey";
     document.addEventListener("click", function(e) {
         if(e.target.className.indexOf("vConUndetect") < 0){
             if(document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value.slice(-10) !== 'nSelection' && window.stopSelecting == 1){
@@ -205,6 +211,8 @@ function selectFromPage(){
                 }
                 setTimeout(function(){ 
                     vcon.style.boxShadow = tempShade;
+                    document.getElementById("pbutton_"+window.checkTime).style.color = "grey";
+                    document.getElementById("pbutton_"+window.checkTime).style.backgroundColor = "#ffffff";
                 }, 300);
             }
         }
