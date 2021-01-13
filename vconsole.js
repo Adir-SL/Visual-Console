@@ -190,6 +190,11 @@ function iFunc(e){
 
 function selectFromPage(){
     //Selects an Element from Page by Clicking it.
+    if(window.stopSelecting == 1){
+        document.getElementById("pbutton_"+window.checkTime).style.color = "grey";
+        document.getElementById("pbutton_"+window.checkTime).style.backgroundColor = "#ffffff";
+        window.stopSelecting = 0;
+    }else{
     window.stopSelecting = 1;
     document.getElementById("pbutton_"+window.checkTime).style.color = "#ffffff";
     document.getElementById("pbutton_"+window.checkTime).style.backgroundColor = "grey";
@@ -217,6 +222,7 @@ function selectFromPage(){
             }
         }
       });
+    }
 }
 
 window.checkTime = new Date().valueOf();
