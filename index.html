@@ -4,6 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual Console Demo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+        h1{
+            font-weight: 700;
+            background-color: skyblue;
+            width: fit-content;
+            padding: 0 8px;
+        }
+        button{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            /* border: 1px solid skyblue; */
+            border: none;
+            border-bottom: 2px solid skyblue;
+            outline: none;
+            padding: 8px 16px;
+            margin: 4px;
+            border-radius: 4px;
+            color: #000000;
+            background-color: #ededed;
+            cursor: pointer;
+        }
+        .flexDiv{
+            display: flex;
+            width: 50%;
+            align-items: flex-start;
+        }
+        textarea{
+            flex-grow: 1;
+            /* width: fit-content; */
+        }
+        .flexDiv button{
+            min-width: fit-content;
+        }
+        button:hover{
+            background-color: #e2e2e2;
+        }
+        .alertbtn{
+            border-bottom-color: pink;
+        }
+        .clearbtn{
+            border-bottom-color: #c7c7c7;
+        }
+        .debugbtn{
+            border-bottom-color: orange;
+        }
+        .errorbtn{
+            border-bottom-color: red;
+        }
+        .warnbtn{
+            border-bottom-color: gold;
+        }
+    </style>
     <script>
         window.logNumber=1;
         window.warnNumber=1;
@@ -11,17 +68,19 @@
     </script>
 </head>
 <body>
-    <textarea placeholder="Insert Console Log Here"></textarea><button onclick="console.log(document.getElementsByTagName('textarea')[0].value);">Send Log</button>
+    <h1>Visual Console</h1>
+    <p>This is a demo page for the <a href='https://github.com/Adir-SL/Visual-Console'>Visual Console Github Repository</a></p>
+    <div class="flexDiv">
+        <textarea placeholder="Insert Console Log Here"></textarea>
+        <button onclick="console.log(document.getElementsByTagName('textarea')[0].value);">Send Log</button>
+    </div>
     <br/><br/>
     <button onclick="console.log('Log Number: #'+window.logNumber);window.logNumber+=1;">Log Me</button>
-    <button onclick="console.warn('Warning: #'+window.warnNumber);window.warnNumber+=1;">Warn Me</button>
-    <button onclick="console.error('Error: #'+window.errorNumber);window.errorNumber+=1;">Error Me</button>
-    <button onclick="console.debug('Debug: #'+window.errorNumber);window.errorNumber+=1;">Debug Me</button>
-    <button onclick="console.clear();">CLEAR</button>
-    <button onclick="alert('TEST');">ALERT</button>
-    <div>asdasdads
-        <div>asd</div>
-    </div>
+    <button class="warnbtn" onclick="console.warn('Warning: #'+window.warnNumber);window.warnNumber+=1;">Warn Me</button>
+    <button class="errorbtn" onclick="console.error('Error: #'+window.errorNumber);window.errorNumber+=1;">Error Me</button>
+    <button class="debugbtn" onclick="console.debug('Debug: #'+window.errorNumber);window.errorNumber+=1;">Debug Me</button>
+    <button class="alertbtn" onclick="alert('TEST');">ALERT</button>
+    <button class="clearbtn" onclick="console.clear();">CLEAR</button>
     <!-- <script src="https://adir-sl.github.io/Visual-Console/vconsole.js"></script> -->
     <script src="vconsole.js"></script>
     <script>
