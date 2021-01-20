@@ -60,6 +60,18 @@
         .warnbtn{
             border-bottom-color: gold;
         }
+        .arrowDiv{
+            position: absolute;
+            width: 150px;
+            right: 75px;
+            top: 260px;
+        }
+        .arrowDiv svg{
+            padding-left: 12px;
+        }
+        .arrowDiv path{
+            fill: #aaaaaa;
+        }
     </style>
     <script>
         window.logNumber=1;
@@ -70,6 +82,12 @@
 <body>
     <h1>Visual Console</h1>
     <p>This is a demo page for the <a href='https://github.com/Adir-SL/Visual-Console'>Visual Console Github Repository</a></p>
+    <div class="arrowDiv">
+        <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z" />
+        </svg>
+        <br/>Visual<br/>Console
+    </div>
     <div class="flexDiv">
         <textarea placeholder="Insert Console Log Here"></textarea>
         <button onclick="console.log(document.getElementsByTagName('textarea')[0].value);">Send Log</button>
