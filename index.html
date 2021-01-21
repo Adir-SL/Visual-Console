@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual Console Demo</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        body{
+
+        body {
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        h1{
+        #wrapper{
+            width: 50%;
+        }
+        h1 {
             font-weight: 700;
             background-color: skyblue;
             width: fit-content;
             padding: 0 8px;
         }
-        button{
+
+        button {
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             /* border: 1px solid skyblue; */
@@ -30,116 +39,176 @@
             background-color: #ededed;
             cursor: pointer;
         }
-        .flexDiv{
+
+        .flexDiv {
             display: flex;
             width: 50%;
             align-items: flex-start;
         }
-        textarea{
+
+        textarea {
             flex-grow: 1;
             /* width: fit-content; */
         }
-        .flexDiv button{
+
+        .flexDiv button {
             min-width: fit-content;
         }
-        button:hover{
+
+        button:hover {
             background-color: #e2e2e2;
         }
-        .alertbtn{
+
+        .alertbtn {
             border-bottom-color: pink;
         }
-        .clearbtn{
+
+        .clearbtn {
             border-bottom-color: #c7c7c7;
         }
-        .debugbtn{
+
+        .debugbtn {
             border-bottom-color: orange;
         }
-        .errorbtn{
+
+        .errorbtn {
             border-bottom-color: red;
         }
-        .warnbtn{
+
+        .warnbtn {
             border-bottom-color: gold;
         }
-        .arrowDiv{
-            position: absolute;
+
+        .arrowDiv {
+            position: fixed;
             width: 150px;
             right: 75px;
             top: 260px;
         }
-        .arrowDiv svg{
+
+        .arrowDiv svg {
             padding-left: 12px;
             animation: attention 1000ms ease-in-out 3;
         }
-        .arrowDiv path{
+
+        .arrowDiv path {
             fill: #aaaaaa;
         }
-        pre{
+
+        pre {
             padding: 8px 0;
-        }
-        code{
             background-color: #e9e9e9;
             padding: 16px;
             border-radius: 4px;
+            width: fit-content;
+        }
+
+        code {
             color: #999999;
         }
-        c-1{
+
+        c-1 {
             color: #2f9c0a;
         }
-        c-2{
+
+        c-2 {
             color: #e90;
         }
-        c-3{
+
+        c-3 {
             color: #1990b8;
         }
+
+        c-4 {
+            color: #995d96;
+        }
+
         @keyframes attention {
-            0%{transform: translate(0, 0);}
-            40%{transform: translate(8px, -8px);}
-            80%{transform: translate(0, 0);}
+            0% {
+                transform: translate(0, 0);
+            }
+
+            40% {
+                transform: translate(8px, -8px);
+            }
+
+            80% {
+                transform: translate(0, 0);
+            }
+        }
+        @media only screen and (max-width: 990px){
+            #wrapper{
+                width: 90%;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://adirsl.com/jr/img/prism.css">
     <script>
-        window.logNumber=1;
-        window.warnNumber=1;
-        window.errorNumber=1;
+        window.logNumber = 1;
+        window.warnNumber = 1;
+        window.errorNumber = 1;
     </script>
 </head>
+
 <body>
-    <h1>Visual Console</h1>
-    <p>This is a demo page for the <a href='https://github.com/Adir-SL/Visual-Console'>Visual Console Github Repository</a></p>
-    <div class="arrowDiv">
-        <svg style="width:48px;height:48px" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z" />
-        </svg>
-        <br/>Visual<br/>Console
-    </div>
-    <h2>Test It Out</h2>
-    <div class="flexDiv">
-        <textarea placeholder="Insert Console Log Here"></textarea>
-        <button onclick="console.log(document.getElementsByTagName('textarea')[0].value);">Send Log</button>
-    </div>
-    <br/><br/>
-    <button onclick="console.log('Log Number: #'+window.logNumber);window.logNumber+=1;">Log Me</button>
-    <button class="warnbtn" onclick="console.warn('Warning: #'+window.warnNumber);window.warnNumber+=1;">Warn Me</button>
-    <button class="errorbtn" onclick="console.error('Error: #'+window.errorNumber);window.errorNumber+=1;">Error Me</button>
-    <button class="debugbtn" onclick="console.debug('Debug: #'+window.errorNumber);window.errorNumber+=1;">Debug Me</button>
-    <button class="alertbtn" onclick="alert('TEST');">Alert Me</button>
-    <button class="clearbtn" onclick="console.clear();">Clear</button>
+    <div id='wrapper'>
+        <h1>Visual Console</h1>
+        <p>This is a demo page for the <a href='https://github.com/Adir-SL/Visual-Console'>Visual Console Github
+                Repository</a></p>
+        <div class="arrowDiv">
+            <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z" />
+            </svg>
+            <br />Visual<br />Console
+        </div>
+        <h2>Test It Out</h2>
+        <div class="flexDiv">
+            <textarea placeholder="Insert Console Log Here"></textarea>
+            <button onclick="console.log(document.getElementsByTagName('textarea')[0].value);">Send Log</button>
+        </div>
+        <br /><br />
+        <button onclick="console.log('Log Number: #'+window.logNumber);window.logNumber+=1;">Log Me</button>
+        <button class="warnbtn" onclick="console.warn('Warning: #'+window.warnNumber);window.warnNumber+=1;">Warn
+            Me</button>
+        <button class="errorbtn" onclick="console.error('Error: #'+window.errorNumber);window.errorNumber+=1;">Error
+            Me</button>
+        <button class="debugbtn" onclick="console.debug('Debug: #'+window.errorNumber);window.errorNumber+=1;">Debug
+            Me</button>
+        <button class="alertbtn" onclick="alert('TEST');">Alert Me</button>
+        <button class="clearbtn" onclick="console.clear();">Clear</button>
 
-    <h2>Features</h2>
-    <ul>
-        <li>Selecting specific elements from the page to debug them.</li>
-        <li>Local page console history - private by default.</li>
-        <li>Debugging your CSS in full screen, no need to change your window size to make room for the developer tools.</li>
-        <li>Check your page across devices - even on mobile!</li>
-    </ul>
+        <h2>Features</h2>
+        <ul>
+            <li>Selecting specific elements from the page to debug them.</li>
+            <li>Local page console history - private by default.</li>
+            <li>Debugging your CSS in full screen, no need to change your window size to make room for the developer
+                tools.</li>
+            <li>Check your page across devices - even on mobile!</li>
+        </ul>
 
-    <h2>Getting Started</h2>
-    <p>To add Visual Console to your project, add this line to any page you want the console to appear:</p>
-    <pre><code>&lt;<c-1>script</c-1> <c-2>src</c-2>=<c-3>"https://adir-sl.github.io/Visual-Console/vconsole.js"</c-3>&gt;&lt;/<c-1>script</c-1>&gt;</code></pre>
-    <br/>
-    <p>If weight is an issue in your project, there's also the minified version (13.6KB):</p>
-    <pre><code>&lt;<c-1>script</c-1> <c-2>src</c-2>=<c-3>"https://adir-sl.github.io/Visual-Console/vconsole.min.js"</c-3>&gt;&lt;/<c-1>script</c-1>&gt;</code></pre>
+        <h2>Getting Started</h2>
+        <p>To add Visual Console to your project, add this line to any page you want the console to appear:</p>
+        <pre><code>&lt;<c-1>script</c-1> <c-2>src</c-2>=<c-3>"https://adir-sl.github.io/Visual-Console/vconsole.js"</c-3>&gt;&lt;/<c-1>script</c-1>&gt;</code></pre>
+        <br />
+        <p>If weight is an issue in your project, there's also the minified version (13.6KB):</p>
+        <pre><code>&lt;<c-1>script</c-1> <c-2>src</c-2>=<c-3>"https://adir-sl.github.io/Visual-Console/vconsole.min.js"</c-3>&gt;&lt;/<c-1>script</c-1>&gt;</code></pre>
+        <br />
+
+        <p>How to Disable Visual Console?</p>
+        <p>When you're done debugging your page and your page is ready for production, it is advised to keep the Visual
+            Console code but comment it out, like the example below,
+            this way you can always uncomment it if you find a new bug, but it will show nothing to the user and will
+            give no error in the actual JavaScript console.</p>
+        <pre><code>&lt;!-- &lt;script src="https://adir-sl.github.io/Visual-Console/vconsole.js"&gt;&lt;/script&gt; --&gt;</code></pre>
+        <br />
+        <p>Start Visual Console Without the Panel?</p>
+        <p>After loading the script (see the 'install' section), ou can always add to your code this line of code:</p>
+
+        <pre><code>&lt;<c-1>script</c-1>&gt;
+    <c-4>toggleConsole</c-4>();
+&lt;/<c-1>script</c-1>&gt;</code></pre>
+    </div>
 
     <!-- <script src="https://adir-sl.github.io/Visual-Console/vconsole.js"></script> -->
     <script src="vconsole.js"></script>
@@ -147,4 +216,5 @@
         // toggleConsole();
     </script>
 </body>
+
 </html>
