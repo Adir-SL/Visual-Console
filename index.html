@@ -84,6 +84,7 @@
             width: 150px;
             right: 75px;
             top: 260px;
+            transition: opacity 300ms linear 0s;
         }
 
         .arrowDiv svg {
@@ -147,6 +148,13 @@
         window.logNumber = 1;
         window.warnNumber = 1;
         window.errorNumber = 1;
+        document.addEventListener("click", function() {
+            if(window.hideConsole == true){
+                document.querySelector(".arrowDiv").style.opacity = 0;
+            }else{
+                document.querySelector(".arrowDiv").style.opacity = 1;
+            }
+        });
     </script>
 </head>
 
