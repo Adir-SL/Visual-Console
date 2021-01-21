@@ -35,7 +35,7 @@ You can also use this to debug your code on mobile devices.
 
 Once you start running your code, you'll start to see your code history, to ease on your memory and prevent you from trying to remember every command in your head.
 
-## Disable Visual Console Before Launch?
+## How to Disable Visual Console?
 When you're done debugging your page and your page is ready for production, it is advised to keep the Visual Console code but comment it out, like so:
 ```
 <!-- <script src="https://adir-sl.github.io/Visual-Console/vconsole.js"></script> -->

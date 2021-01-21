@@ -73,12 +73,31 @@
         .arrowDiv path{
             fill: #aaaaaa;
         }
+        pre{
+            padding: 8px 0;
+        }
+        code{
+            background-color: #e9e9e9;
+            padding: 16px;
+            border-radius: 4px;
+            color: #999999;
+        }
+        c-1{
+            color: #2f9c0a;
+        }
+        c-2{
+            color: #e90;
+        }
+        c-3{
+            color: #1990b8;
+        }
         @keyframes attention {
             0%{transform: translate(0, 0);}
             40%{transform: translate(8px, -8px);}
             80%{transform: translate(0, 0);}
         }
     </style>
+    <link rel="stylesheet" href="https://adirsl.com/jr/img/prism.css">
     <script>
         window.logNumber=1;
         window.warnNumber=1;
@@ -94,6 +113,7 @@
         </svg>
         <br/>Visual<br/>Console
     </div>
+    <h2>Test It Out</h2>
     <div class="flexDiv">
         <textarea placeholder="Insert Console Log Here"></textarea>
         <button onclick="console.log(document.getElementsByTagName('textarea')[0].value);">Send Log</button>
@@ -103,8 +123,24 @@
     <button class="warnbtn" onclick="console.warn('Warning: #'+window.warnNumber);window.warnNumber+=1;">Warn Me</button>
     <button class="errorbtn" onclick="console.error('Error: #'+window.errorNumber);window.errorNumber+=1;">Error Me</button>
     <button class="debugbtn" onclick="console.debug('Debug: #'+window.errorNumber);window.errorNumber+=1;">Debug Me</button>
-    <button class="alertbtn" onclick="alert('TEST');">ALERT</button>
-    <button class="clearbtn" onclick="console.clear();">CLEAR</button>
+    <button class="alertbtn" onclick="alert('TEST');">Alert Me</button>
+    <button class="clearbtn" onclick="console.clear();">Clear</button>
+
+    <h2>Features</h2>
+    <ul>
+        <li>Selecting specific elements from the page to debug them.</li>
+        <li>Local page console history - private by default.</li>
+        <li>Debugging your CSS in full screen, no need to change your window size to make room for the developer tools.</li>
+        <li>Check your page across devices - even on mobile!</li>
+    </ul>
+
+    <h2>Getting Started</h2>
+    <p>To add Visual Console to your project, add this line to any page you want the console to appear:</p>
+    <pre><code>&lt;<c-1>script</c-1> <c-2>src</c-2>=<c-3>"https://adir-sl.github.io/Visual-Console/vconsole.js"</c-3>&gt;&lt;/<c-1>script</c-1>&gt;</code></pre>
+    <br/>
+    <p>If weight is an issue in your project, there's also the minified version (13.6KB):</p>
+    <pre><code>&lt;<c-1>script</c-1> <c-2>src</c-2>=<c-3>"https://adir-sl.github.io/Visual-Console/vconsole.min.js"</c-3>&gt;&lt;/<c-1>script</c-1>&gt;</code></pre>
+
     <!-- <script src="https://adir-sl.github.io/Visual-Console/vconsole.js"></script> -->
     <script src="vconsole.js"></script>
     <script>
