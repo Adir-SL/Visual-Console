@@ -68,9 +68,15 @@
         }
         .arrowDiv svg{
             padding-left: 12px;
+            animation: attention 1000ms ease-in-out 3;
         }
         .arrowDiv path{
             fill: #aaaaaa;
+        }
+        @keyframes attention {
+            0%{transform: translate(0, 0);}
+            40%{transform: translate(8px, -8px);}
+            80%{transform: translate(0, 0);}
         }
     </style>
     <script>
