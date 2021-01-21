@@ -12,7 +12,7 @@ If weight is an issue in your project, there's also the minified version (13.6KB
 <script src="https://adir-sl.github.io/Visual-Console/vconsole.min.js"></script>
 ```
 ## Start Visual Console Without the Panel?
-After loading the script (see the 'install' section), ou can always add to your code this line of code:
+After loading the script (see the 'install' section), you can always add to your code this line of code:
 ```
 <script>
     toggleConsole();
