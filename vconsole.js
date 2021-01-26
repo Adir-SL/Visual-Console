@@ -239,5 +239,8 @@ function selectFromPage(){
 }
 
 window.checkTime = new Date().valueOf();
-addConsole();
-console.log('Hello World!');
+
+window.onload = function() {
+    addConsole();
+    console.log('Hello World!');
+  }
