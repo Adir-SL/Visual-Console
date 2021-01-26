@@ -150,7 +150,7 @@ function addConsole(){
 
     //Count CSS
     const CountStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    CountStyles(".vconcount{ border-bottom:2px solid lightgreen; }")
+    CountStyles(".vconcount{ border-bottom:2px solid darkseagreen; }")
 
     //Alert CSS
     const AlertStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
