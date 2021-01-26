@@ -53,17 +53,28 @@ console.debug = function(){
         window.checkCode = undefined;
     }
 }
-
+window.countNum = 0;
+countArray = [];
 // count
 console.defaultCount = console.count.bind(console);
 console.counts = [];
 console.count = function(){
     console.defaultCount.apply(console, arguments);
     console.counts.push(Array.from(arguments));
-    if(window.checkCode == undefined){
-        toVConsole("<div class='vconcount vConUndetect' title='console.count()'>" + Array.from(arguments) + "</div>");
+    if(countArray.lastIndexOf(console.counts[console.counts.length-1][0]) > -1){
+        window.tempCheck = countArray.lastIndexOf(console.counts[console.counts.length-1][0]) + 1;
+        countArray[countArray.length] = console.counts[console.counts.length-1][0];
+        window.countNum = countArray[window.tempCheck];
     }else{
-        toVConsole("<div class='vconcount vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + "</div>");
+        countArray[countArray.length] = console.counts[console.counts.length-1][0];
+        window.countNum = 0;
+    }
+    window.countNum += 1;
+    countArray[countArray.length] = window.countNum;
+    if(window.checkCode == undefined){
+        toVConsole("<div class='vconcount vConUndetect' title='console.count()'>" + Array.from(arguments) + ": "+ window.countNum + "</div>");
+    }else{
+        toVConsole("<div class='vconcount vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + ": "+ window.countNum + "</div>");
         window.checkCode = undefined;
     }
 }
