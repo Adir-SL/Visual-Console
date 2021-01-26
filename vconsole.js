@@ -54,6 +54,20 @@ console.debug = function(){
     }
 }
 
+// count
+console.defaultCount = console.count.bind(console);
+console.counts = [];
+console.count = function(){
+    console.defaultCount.apply(console, arguments);
+    console.counts.push(Array.from(arguments));
+    if(window.checkCode == undefined){
+        toVConsole("<div class='vconcount vConUndetect' title='console.count()'>" + Array.from(arguments) + "</div>");
+    }else{
+        toVConsole("<div class='vconcount vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + "</div>");
+        window.checkCode = undefined;
+    }
+}
+
 // clear
 console.defaultClear = console.clear.bind(console);
 console.clears = [];
@@ -122,6 +136,10 @@ function addConsole(){
     //Debug CSS
     const DebugStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
     DebugStyles(".vcondebug{ border-bottom:2px solid orange; }")
+
+    //Count CSS
+    const CountStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
+    CountStyles(".vconcount{ border-bottom:2px solid green; }")
 
     //Alert CSS
     const AlertStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
