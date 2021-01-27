@@ -102,6 +102,7 @@ function toVConsole(y){
         var currentdate = new Date();
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details").length-1].open = false;
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary").length-1].innerHTML = "Cleared at "+currentdate.getHours()+":"+currentdate.getMinutes();
+        document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary").length-1].style.height = "auto";
         document.getElementById("vconsole_"+window.checkTime).innerHTML += "<details class='vConUndetect' open><summary class='vConUndetect'></summary></details>";
     }else{
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details").length-1].innerHTML += y;
@@ -159,7 +160,7 @@ function addConsole(){
 
     //Summary CSS
     const SumStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    SumStyles("#vconsole_"+window.checkTime+" summary::marker {  font-size: 0; } "+"#vconsole_"+window.checkTime+" summary::-webkit-details-marker {  display: none; }"+"#vconsole_"+window.checkTime+" details {  margin-bottom: 16px; }"+"#vconsole_"+window.checkTime+" details:last-of-type {  margin-bottom: 0; }"+"#vconsole_"+window.checkTime+" summary {  margin-bottom:4px; color:#333333; cursor:pointer; }"+"#vconsole_"+window.checkTime+" details[open] summary { color:#bbbbbb; }"+"#vconsole_"+window.checkTime+" summary:focus {  outline:none; }"+"#vconsole_"+window.checkTime+" summary:hover { opacity:0.8; }")
+    SumStyles("#vconsole_"+window.checkTime+" summary::marker {  font-size: 0; } "+"#vconsole_"+window.checkTime+" summary::-webkit-details-marker {  display: none; }"+"#vconsole_"+window.checkTime+" details {  margin-bottom: 16px; }"+"#vconsole_"+window.checkTime+" details:last-of-type {  margin-bottom: 0; }"+"#vconsole_"+window.checkTime+" summary {  margin-bottom:4px; color:#333333; cursor:pointer; height:0; }"+"#vconsole_"+window.checkTime+" details[open] summary { color:#bbbbbb; }"+"#vconsole_"+window.checkTime+" summary:focus {  outline:none; }"+"#vconsole_"+window.checkTime+" summary:hover { opacity:0.8; }")
 }
 function toggleConsole(){
     if(window.hideConsole != true){
