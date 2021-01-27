@@ -69,6 +69,9 @@
         .debugbtn {
             border-bottom-color: orange;
         }
+        .countbtn {
+            border-bottom-color: darkseagreen;
+        }
 
         .errorbtn {
             border-bottom-color: red;
@@ -252,12 +255,10 @@
         </div>
         <br /><br />
         <button onclick="console.log('Log Number: #'+window.logNumber);window.logNumber+=1;">Log Me</button>
-        <button class="warnbtn" onclick="console.warn('Warning: #'+window.warnNumber);window.warnNumber+=1;">Warn
-            Me</button>
-        <button class="errorbtn" onclick="console.error('Error: #'+window.errorNumber);window.errorNumber+=1;">Error
-            Me</button>
-        <button class="debugbtn" onclick="console.debug('Debug: #'+window.errorNumber);window.errorNumber+=1;">Debug
-            Me</button>
+        <button class="warnbtn" onclick="console.warn('Warning: #'+window.warnNumber);window.warnNumber+=1;">Warn Me</button>
+        <button class="errorbtn" onclick="console.error('Error: #'+window.errorNumber);window.errorNumber+=1;">Error Me</button>
+        <button class="debugbtn" onclick="console.debug('Debug: #'+window.errorNumber);window.errorNumber+=1;">Debug Me</button>
+        <button class="countbtn" onclick="console.count('Count');">Counter</button>
         <button class="alertbtn" onclick="alert('TEST');">Alert Me</button>
         <button class="clearbtn" onclick="console.clear();">Clear</button>
 
