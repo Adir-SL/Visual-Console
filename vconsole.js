@@ -53,9 +53,10 @@ console.debug = function(){
         window.checkCode = undefined;
     }
 }
+
+// count
 window.countNum = 0;
 countArray = [];
-// count
 console.defaultCount = console.count.bind(console);
 console.counts = [];
 console.count = function(){
