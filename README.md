@@ -23,8 +23,9 @@ Visual Console will present any of the following commands:
 1. console.log()
 2. console.error()
 3. console.debug()
-4. console.warn()
-5. alert()
+4. console.count()
+5. console.warn()
+6. alert()
 
 ## Features
 You can show or hide the Visual Console by clicking on the Round Cheveron Icon (in the far top right corner) or by tapping the Tilda Key (~).
