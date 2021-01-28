@@ -20,12 +20,13 @@ After loading the script (see the 'install' section), you can always add to your
 ```
 ## How does it work?
 Visual Console will present any of the following commands:
-1. console.log()
-2. console.error()
-3. console.debug()
-4. console.count()
-5. console.warn()
-6. alert()
+1. alert()
+2. console.log()
+3. console.error()
+4. console.debug()
+5. console.count()
+6. console.countReset()
+7. console.warn()
 
 ## Features
 You can show or hide the Visual Console by clicking on the Round Cheveron Icon (in the far top right corner) or by tapping the Tilda Key (~).
