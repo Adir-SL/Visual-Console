@@ -80,6 +80,24 @@ console.count = function(){
     }
 }
 
+// countReset
+console.defaultCountReset = console.countReset.bind(console);
+console.countResets = [];
+console.countReset = function(){
+    console.defaultCountReset.apply(console, arguments);
+    console.countResets.push(Array.from(arguments));
+
+    countArray[countArray.length] = console.countResets[console.countResets.length-1][0];
+    window.countNum = 0;
+    countArray[countArray.length] = window.countNum;
+    // if(window.checkCode == undefined){
+    //     toVConsole("<div class='vcondebug vConUndetect' title='console.debug()'>" + Array.from(arguments) + "</div>");
+    // }else{
+    //     toVConsole("<div class='vcondebug vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + "</div>");
+    //     window.checkCode = undefined;
+    // }
+}
+
 // clear
 console.defaultClear = console.clear.bind(console);
 console.clears = [];
