@@ -90,6 +90,7 @@ console.countReset = function(){
     countArray[countArray.length] = console.countResets[console.countResets.length-1][0];
     window.countNum = 0;
     countArray[countArray.length] = window.countNum;
+    toVConsole("<div class='vconcountReset vConUndetect' title='console.debug()'>" + Array.from(arguments) + " counter was cleared" + "</div>");
     // if(window.checkCode == undefined){
     //     toVConsole("<div class='vcondebug vConUndetect' title='console.debug()'>" + Array.from(arguments) + "</div>");
     // }else{
@@ -171,6 +172,10 @@ function addConsole(){
     //Count CSS
     const CountStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
     CountStyles(".vconcount{ border-bottom:2px solid darkseagreen; }")
+
+    //CountReset CSS
+    const CountResetStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
+    CountResetStyles(".vconcountReset{ border-bottom:2px solid seagreen; }")
 
     //Alert CSS
     const AlertStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
