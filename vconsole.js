@@ -91,12 +91,6 @@ console.countReset = function(){
     window.countNum = 0;
     countArray[countArray.length] = window.countNum;
     toVConsole("<div class='vconcountReset vConUndetect' title='console.debug()'>" + Array.from(arguments) + " counter was cleared" + "</div>");
-    // if(window.checkCode == undefined){
-    //     toVConsole("<div class='vcondebug vConUndetect' title='console.debug()'>" + Array.from(arguments) + "</div>");
-    // }else{
-    //     toVConsole("<div class='vcondebug vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + "</div>");
-    //     window.checkCode = undefined;
-    // }
 }
 
 // clear
