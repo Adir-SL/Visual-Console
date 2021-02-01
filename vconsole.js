@@ -210,7 +210,7 @@ function addConsole(){
 
     //Time CSS
     const TimeStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
-    TimeStyles(".vcontime{ border-bottom:2px solid cornflowerBlue; } .vcontime span{ opacity:0.4; }")
+    TimeStyles(".vcontime{ border-bottom:2px solid darkorchid; } .vcontime span{ opacity:0.4; }")
     
     //Errors CSS
     const ErrorStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
