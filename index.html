@@ -86,6 +86,9 @@
         .infobtn {
             border-bottom-color: cornflowerBlue;
         }
+        .timebtn{
+            border-bottom-color: darkorchid;
+        }
 
         .arrowDiv {
             position: fixed;
@@ -269,6 +272,8 @@
         <button class="debugbtn" onclick="console.debug('Debug: #'+window.debugNumber);window.debugNumber+=1;">Debug Me</button>
         <button class="countbtn" onclick="console.count('Count');">Count Me</button>
         <button class="countresetbtn" onclick="console.countReset('Count');">Count Reset</button>
+        <button class="timebtn" onclick="console.time('My Time');">Start Timer</button>
+        <button class="timebtn" onclick="console.timeEnd('My Time');">End Timer</button>
         <button class="alertbtn" onclick="alert('Test Alert');">Alert Me</button>
         <button class="clearbtn" onclick="console.clear();">Clear Console</button>
 
