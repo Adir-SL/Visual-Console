@@ -12,6 +12,20 @@ console.log = function(){
     }
 }
 
+// info
+console.defaultInfo = console.info.bind(console);
+console.infos = [];
+console.info = function(){
+    console.defaultInfo.apply(console, arguments);
+    console.infos.push(Array.from(arguments));
+    if(window.checkCode == undefined){
+        toVConsole("<div class='vconinfo vConUndetect' title='console.info()'>" + Array.from(arguments) + "</div>");
+    }else{
+        toVConsole("<div class='vconinfo vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + "</div>");
+        window.checkCode = undefined;
+    }
+}
+
 // error
 console.defaultError = console.error.bind(console);
 console.errors = [];
@@ -150,6 +164,10 @@ function addConsole(){
     //Logs CSS
     const LogStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
     LogStyles(".vconlog{ border-bottom:2px solid skyblue; }")
+
+    //Infos CSS
+    const InfoStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
+    InfoStyles(".vconinfo{ border-bottom:2px solid cornflowerBlue; }")
     
     //Errors CSS
     const ErrorStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
