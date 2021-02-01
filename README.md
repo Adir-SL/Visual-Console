@@ -19,7 +19,7 @@ After loading the script (see the 'install' section), you can always add to your
 </script>
 ```
 ## How does it work?
-Visual Console will present any of the following commands:
+Visual Console will display any of the following commands:
 1. alert()
 2. console.log()
 3. console.info()
