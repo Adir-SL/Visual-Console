@@ -104,8 +104,47 @@ console.countReset = function(){
     countArray[countArray.length] = console.countResets[console.countResets.length-1][0];
     window.countNum = 0;
     countArray[countArray.length] = window.countNum;
-    toVConsole("<div class='vconcountReset vConUndetect' title='console.debug()'>" + Array.from(arguments) + " counter was cleared" + "</div>");
+    toVConsole("<div class='vconcountReset vConUndetect' title='console.countReset()'>" + Array.from(arguments) + " counter was cleared" + "</div>");
 }
+
+// time
+timeArray = [];
+console.defaultTime = console.time.bind(console);
+console.times = [];
+console.time = function(){
+    window.timeNum  = new Date().getTime();
+    console.defaultTime.apply(console, arguments);
+    console.times.push(Array.from(arguments));
+    if(window.checkCode == undefined){
+        toVConsole("<div class='vcontime vConUndetect' title='console.time()'>" + Array.from(arguments) + " : Timer started" + "</div>");
+    }else{
+        toVConsole("<div class='vcontime vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + " : Timer started" + "</div>");
+        window.checkCode = undefined;
+    }
+    timeArray[timeArray.length] = Array.from(arguments)[0];
+    timeArray[timeArray.length] = window.timeNum;
+}
+
+// timeEnd
+console.defaultTimeEnd = console.timeEnd.bind(console);
+console.timeEnds = [];
+console.timeEnd = function(){
+    console.defaultTimeEnd.apply(console, arguments);
+    console.timeEnds.push(Array.from(arguments));
+    if(timeArray.indexOf(Array.from(arguments)[0]) > -1){
+        origTime = timeArray[timeArray.indexOf(Array.from(arguments)[0])+1];
+        newTime = new Date().getTime() - origTime;
+        if(window.checkCode == undefined){
+            toVConsole("<div class='vcontime vConUndetect' title='console.timeEnd()'>" + Array.from(arguments) + " : " + newTime/1000 + "<span> (" + newTime + "ms)</span>" + "</div>");
+        }else{
+            toVConsole("<div class='vcontime vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + " : " + newTime/1000 + "<span> (" + newTime + "ms)</span>" + "</div>");
+            window.checkCode = undefined;
+        }
+        timeArray[timeArray.indexOf(Array.from(arguments)[0])+1] = '';
+        timeArray[timeArray.indexOf(Array.from(arguments)[0])] = '';
+    }
+}
+
 
 // clear
 console.defaultClear = console.clear.bind(console);
@@ -168,6 +207,10 @@ function addConsole(){
     //Infos CSS
     const InfoStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
     InfoStyles(".vconinfo{ border-bottom:2px solid cornflowerBlue; }")
+
+    //Time CSS
+    const TimeStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
+    TimeStyles(".vcontime{ border-bottom:2px solid cornflowerBlue; } .vcontime span{ opacity:0.4; }")
     
     //Errors CSS
     const ErrorStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
