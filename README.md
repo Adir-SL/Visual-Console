@@ -22,11 +22,13 @@ After loading the script (see the 'install' section), you can always add to your
 Visual Console will present any of the following commands:
 1. alert()
 2. console.log()
-3. console.error()
-4. console.debug()
-5. console.count()
-6. console.countReset()
-7. console.warn()
+3. console.info()
+4. console.error()
+5. console.debug()
+6. console.count()
+7. console.countReset()
+8. console.warn()
+9. console.clear()
 
 ## Features
 You can show or hide the Visual Console by clicking on the Round Cheveron Icon (in the far top right corner) or by tapping the Tilda Key (~).
