@@ -83,6 +83,9 @@
         .warnbtn {
             border-bottom-color: gold;
         }
+        .infobtn {
+            border-bottom-color: cornflowerBlue;
+        }
 
         .arrowDiv {
             position: fixed;
@@ -220,6 +223,7 @@
     <link rel="stylesheet" href="https://adirsl.com/jr/img/prism.css">
     <script>
         window.logNumber = 1;
+        window.infoNumber = 1;
         window.warnNumber = 1;
         window.errorNumber = 1;
         window.debugNumber = 1;
@@ -259,6 +263,7 @@
         </div>
         <br /><br />
         <button onclick="console.log('Log: #'+window.logNumber);window.logNumber+=1;">Log Me</button>
+        <button class="infobtn" onclick="console.info('Info: #'+window.infoNumber);window.infoNumber+=1;">Info Me</button>
         <button class="warnbtn" onclick="console.warn('Warning: #'+window.warnNumber);window.warnNumber+=1;">Warn Me</button>
         <button class="errorbtn" onclick="console.error('Error: #'+window.errorNumber);window.errorNumber+=1;">Error Me</button>
         <button class="debugbtn" onclick="console.debug('Debug: #'+window.debugNumber);window.debugNumber+=1;">Debug Me</button>
