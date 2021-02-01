@@ -27,8 +27,10 @@ Visual Console will present any of the following commands:
 5. console.debug()
 6. console.count()
 7. console.countReset()
-8. console.warn()
-9. console.clear()
+8. console.time()
+9. console.timeEnd()
+10. console.warn()
+11. console.clear()
 
 ## Features
 You can show or hide the Visual Console by clicking on the Round Cheveron Icon (in the far top right corner) or by tapping the Tilda Key (~).
