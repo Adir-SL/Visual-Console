@@ -7,6 +7,7 @@ console.log = function(){
     if(window.checkCode == undefined){
         toVConsole("<div class='vconlog vConUndetect' title='console.log()'>" + Array.from(arguments) + "</div>");
     }else{
+        window.checkCode = window.checkCode.replace(/'/g, '"');
         toVConsole("<div class='vconlog vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + "</div>");
         window.checkCode = undefined;
     }
@@ -21,6 +22,7 @@ console.info = function(){
     if(window.checkCode == undefined){
         toVConsole("<div class='vconinfo vConUndetect' title='console.info()'>" + Array.from(arguments) + "</div>");
     }else{
+        window.checkCode = window.checkCode.replace(/'/g, '"');
         toVConsole("<div class='vconinfo vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + "</div>");
         window.checkCode = undefined;
     }
@@ -35,6 +37,7 @@ console.error = function(){
     if(window.checkCode == undefined){
         toVConsole("<div class='vconerror vConUndetect' title='console.error()'>" + Array.from(arguments) + "</div>");
     }else{
+        window.checkCode = window.checkCode.replace(/'/g, '"');
         toVConsole("<div class='vconerror vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + "</div>");
         window.checkCode = undefined;
     }
@@ -49,6 +52,7 @@ console.warn = function(){
     if(window.checkCode == undefined){
         toVConsole("<div class='vconwarn vConUndetect' title='console.warn()'>" + Array.from(arguments) + "</div>");
     }else{
+        window.checkCode = window.checkCode.replace(/'/g, '"');
         toVConsole("<div class='vconwarn vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + "</div>");
         window.checkCode = undefined;
     }
@@ -63,6 +67,7 @@ console.debug = function(){
     if(window.checkCode == undefined){
         toVConsole("<div class='vcondebug vConUndetect' title='console.debug()'>" + Array.from(arguments) + "</div>");
     }else{
+        window.checkCode = window.checkCode.replace(/'/g, '"');
         toVConsole("<div class='vcondebug vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + "</div>");
         window.checkCode = undefined;
     }
@@ -89,6 +94,7 @@ console.count = function(){
     if(window.checkCode == undefined){
         toVConsole("<div class='vconcount vConUndetect' title='console.count()'>" + Array.from(arguments) + ": "+ window.countNum + "</div>");
     }else{
+        window.checkCode = window.checkCode.replace(/'/g, '"');
         toVConsole("<div class='vconcount vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + ": "+ window.countNum + "</div>");
         window.checkCode = undefined;
     }
@@ -104,7 +110,13 @@ console.countReset = function(){
     countArray[countArray.length] = console.countResets[console.countResets.length-1][0];
     window.countNum = 0;
     countArray[countArray.length] = window.countNum;
-    toVConsole("<div class='vconcountReset vConUndetect' title='console.countReset()'>" + Array.from(arguments) + " counter was cleared" + "</div>");
+    if(window.checkCode == undefined){
+        toVConsole("<div class='vconcountReset vConUndetect' title='console.countReset()'>" + Array.from(arguments) + " counter was cleared" + "</div>");
+    }else{
+        window.checkCode = window.checkCode.replace(/'/g, '"');
+        toVConsole("<div class='vconcountReset vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + " counter was cleared" + "</div>");
+        window.checkCode = undefined;
+    }
 }
 
 // time
@@ -118,6 +130,7 @@ console.time = function(){
     if(window.checkCode == undefined){
         toVConsole("<div class='vcontime vConUndetect' title='console.time()'>" + Array.from(arguments) + " : Timer started" + "</div>");
     }else{
+        window.checkCode = window.checkCode.replace(/'/g, '"');
         toVConsole("<div class='vcontime vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + " : Timer started" + "</div>");
         window.checkCode = undefined;
     }
@@ -137,6 +150,7 @@ console.timeEnd = function(){
         if(window.checkCode == undefined){
             toVConsole("<div class='vcontime vConUndetect' title='console.timeEnd()'>" + Array.from(arguments) + " : " + newTime/1000 + "<span> (" + newTime + "ms)</span>" + "</div>");
         }else{
+            window.checkCode = window.checkCode.replace(/'/g, '"');
             toVConsole("<div class='vcontime vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + " : " + newTime/1000 + "<span> (" + newTime + "ms)</span>" + "</div>");
             window.checkCode = undefined;
         }
@@ -158,6 +172,7 @@ function alert(x){
     if(window.checkCode == undefined){
         toVConsole("<div class='vconalert vConUndetect' title='alert()'>" + x + "</div>");
     }else{
+        window.checkCode = window.checkCode.replace(/'/g, '"');
         toVConsole("<div class='vconalert vConUndetect' title='"+window.checkCode+"'>" + x + "</div>");
         window.checkCode = undefined;
     }
