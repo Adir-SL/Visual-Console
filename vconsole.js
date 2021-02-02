@@ -127,11 +127,27 @@ console.time = function(){
     window.timeNum  = new Date().getTime();
     console.defaultTime.apply(console, arguments);
     console.times.push(Array.from(arguments));
+    var currentdate = new Date();
+    if(currentdate.getSeconds() < 10){
+        getSec = "0"+currentdate.getSeconds();
+    }else{
+        getSec = currentdate.getSeconds();
+    }
+    if(currentdate.getMinutes() < 10){
+        getMin = "0"+currentdate.getMinutes();
+    }else{
+        getMin = currentdate.getMinutes();
+    }
+    if(currentdate.getHours() < 10){
+        getHrs = "0"+currentdate.getHours();
+    }else{
+        getHrs = currentdate.getHours();
+    }
     if(window.checkCode == undefined){
-        toVConsole("<div class='vcontime vConUndetect' title='console.time()'>" + Array.from(arguments) + " : Timer started" + "</div>");
+        toVConsole("<div class='vcontime vConUndetect' title='console.time()'>" + Array.from(arguments) + " : started <span>at</span> " + getHrs+":"+getMin+":"+getSec+ "</div>");
     }else{
         window.checkCode = window.checkCode.replace(/'/g, '"');
-        toVConsole("<div class='vcontime vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + " : Timer started" + "</div>");
+        toVConsole("<div class='vcontime vConUndetect' title='"+window.checkCode+"'>" + Array.from(arguments) + " : started <span>at</span> " + getHrs+":"+getMin+":"+getSec+ "</div>");
         window.checkCode = undefined;
     }
     timeArray[timeArray.length] = Array.from(arguments)[0];
