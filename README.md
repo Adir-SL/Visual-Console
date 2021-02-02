@@ -7,7 +7,7 @@ To add Visual Console to your project, add this line to any page you want the Co
 ```
 
 
-If weight is an issue in your project, there's also the minified version (13.6KB):
+If weight is an issue in your project, there's also the minified version (18.6KB):
 ```
 <script src="https://adir-sl.github.io/Visual-Console/vconsole.min.js"></script>
 ```
