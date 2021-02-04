@@ -273,7 +273,6 @@ function addConsole(){
 }
 function toggleConsole(){
     if(window.hideConsole != true){
-        // document.getElementById('vconsole_'+window.checkTime).style.height = '48px';
         document.getElementById('vconsole_'+window.checkTime).style.transform = "scaleY(0)";
         document.getElementById('vconsole_'+window.checkTime).style.opacity = 0;
         document.getElementById('vconsole_'+window.checkTime).style.pointerEvents = "none";
@@ -283,7 +282,6 @@ function toggleConsole(){
         document.getElementById('vbutton_'+window.checkTime).getElementsByTagName("svg")[0].style.transform = "rotate(-90deg)";
         window.hideConsole = true;
     }else{
-        // document.getElementById('vconsole_'+window.checkTime).style.height = '150px';
         document.getElementById('vconsole_'+window.checkTime).style.transform = "scaleY(1)";
         document.getElementById('vconsole_'+window.checkTime).style.opacity = 1;
         document.getElementById('vconsole_'+window.checkTime).style.pointerEvents = "all";
