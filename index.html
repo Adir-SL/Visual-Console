@@ -7,10 +7,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Visual Console Demo</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
+            color: #333333;
             font-weight: 400;
             display: flex;
             justify-content: center;
@@ -18,16 +19,20 @@
         }
         #wrapper{
             width: 50%;
+            margin-bottom: 100px;
         }
         h1 {
             font-weight: 700;
             background-color: skyblue;
+            border-radius: 4px;
+            text-decoration: underline;
+            text-decoration-color: rgba(0,0,0,.1);
             width: fit-content;
             padding: 0 8px;
         }
 
         button {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 400;
             border: none;
             border-bottom: 2px solid skyblue;
@@ -116,7 +121,6 @@
             margin-top: 1.5em;
             display: flex;
             flex-direction: column;
-            text-align: center;
             border-radius: 8px;
             padding: 24px 48px;
             margin: 8px;
@@ -131,13 +135,14 @@
         .iconList li:last-of-type{
             margin-right: 0;
         }
-        .iconList li i{
+        .iconList li .material-icons{
             margin-bottom: .6em;
             font-size: 2.5em;
             color: skyblue;
             text-decoration: underline;
             text-underline-offset: 0.2em;
             text-decoration-thickness: 2px;
+            user-select: none;
         }
         a{
             color: skyblue;
