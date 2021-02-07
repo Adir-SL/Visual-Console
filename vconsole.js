@@ -213,7 +213,7 @@ function toVConsole(y){
         document.getElementById("vconsole_"+window.checkTime).innerHTML += "<details class='vConUndetect' open><summary class='vConUndetect'></summary></details>";
     }else{
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details").length-1].innerHTML += y;
-        setTimeout(function(){ 
+        setTimeout(function(){
             checkForChars();
         }, 50);
     }
