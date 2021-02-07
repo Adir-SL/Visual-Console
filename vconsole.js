@@ -128,21 +128,9 @@ console.time = function(){
     console.defaultTime.apply(console, arguments);
     console.times.push(Array.from(arguments));
     var currentdate = new Date();
-    if(currentdate.getSeconds() < 10){
-        getSec = "0"+currentdate.getSeconds();
-    }else{
-        getSec = currentdate.getSeconds();
-    }
-    if(currentdate.getMinutes() < 10){
-        getMin = "0"+currentdate.getMinutes();
-    }else{
-        getMin = currentdate.getMinutes();
-    }
-    if(currentdate.getHours() < 10){
-        getHrs = "0"+currentdate.getHours();
-    }else{
-        getHrs = currentdate.getHours();
-    }
+    getSec = ("0"+currentdate.getSeconds()).slice(-2);
+    getMin = ("0"+currentdate.getMinutes()).slice(-2);
+    getHrs = ("0"+currentdate.getHours()).slice(-2);
     if(window.checkCode == undefined){
         toVConsole("<div class='vcontime vConUndetect' title='console.time()'>" + Array.from(arguments) + " : started <span>at</span> " + getHrs+":"+getMin+":"+getSec+ "</div>");
     }else{
@@ -197,16 +185,8 @@ function alert(x){
 function toVConsole(y){
     if(y == "<hr>"){
         var currentdate = new Date();
-        if(currentdate.getHours() < 10){
-            hrsVar = "0" + currentdate.getHours();
-        }else{
-            hrsVar = currentdate.getHours();
-        }
-        if(currentdate.getMinutes() < 10){
-            minVar = "0" + currentdate.getMinutes();
-        }else{
-            minVar = currentdate.getMinutes();
-        }
+        hrsVar = ("0" + currentdate.getHours()).slice(-2);
+        minVar = ("0" + currentdate.getMinutes()).slice(-2);
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details").length-1].open = false;
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary").length-1].innerHTML = "Cleared at "+hrsVar+":"+minVar;
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary").length-1].style.height = "auto";
