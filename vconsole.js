@@ -197,8 +197,18 @@ function alert(x){
 function toVConsole(y){
     if(y == "<hr>"){
         var currentdate = new Date();
+        if(currentdate.getHours() < 10){
+            hrsVar = "0" + currentdate.getHours();
+        }else{
+            hrsVar = currentdate.getHours();
+        }
+        if(currentdate.getMinutes() < 10){
+            minVar = "0" + currentdate.getMinutes();
+        }else{
+            minVar = currentdate.getMinutes();
+        }
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("details").length-1].open = false;
-        document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary").length-1].innerHTML = "Cleared at "+currentdate.getHours()+":"+currentdate.getMinutes();
+        document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary").length-1].innerHTML = "Cleared at "+hrsVar+":"+minVar;
         document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary")[document.getElementById("vconsole_"+window.checkTime).getElementsByTagName("summary").length-1].style.height = "auto";
         document.getElementById("vconsole_"+window.checkTime).innerHTML += "<details class='vConUndetect' open><summary class='vConUndetect'></summary></details>";
     }else{
