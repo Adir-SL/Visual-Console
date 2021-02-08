@@ -421,18 +421,19 @@ function updateCodeInElements(){
     window.origCodeAtLoad = document.body.innerHTML;
 }
 function searchForCode(){
-    window.origPageSource = document.getElementById("vConsoleElements_"+window.checkTime).innerText;
+    updateCodeInElements();
+    window.origPageSource = window.origCodeAtLoad;
     
-    window.newPageSource = window.origPageSource.slice(0,window.origPageSource.indexOf(vcon.innerHTML));
+    window.newPageSource = window.origPageSource.slice(0,window.origPageSource.indexOf(vcon.outerHTML));
     window.newPageSource += "<selected-text-start-please>";
-    window.newPageSource += vcon.innerHTML.toString();
+    window.newPageSource += vcon.outerHTML.toString();
     window.newPageSource += "<selected-text-end-please>";
-    window.newPageSource += window.origPageSource.slice(window.origPageSource.indexOf(vcon.innerHTML)+vcon.innerHTML.length, window.origPageSource.length);
+    window.newPageSource += window.origPageSource.slice(window.origPageSource.indexOf(vcon.outerHTML)+vcon.outerHTML.length, window.origPageSource.length);
 
     document.getElementById("vConsoleElements_"+window.checkTime).innerText = window.newPageSource;
     document.getElementById("vConsoleElements_"+window.checkTime).innerHTML = document.getElementById("vConsoleElements_"+window.checkTime).innerHTML.replace(/&lt;selected-text-start-please&gt;/g, "<span title='vcon variable'>");
     document.getElementById("vConsoleElements_"+window.checkTime).innerHTML = document.getElementById("vConsoleElements_"+window.checkTime).innerHTML.replace(/&lt;selected-text-end-please&gt;/g, "</span>");
-    
+    document.getElementById("vConsoleElements_"+window.checkTime).scrollTop = document.getElementById("vConsoleElements_"+window.checkTime).getElementsByTagName("span")[0].offsetTop-100;
     
 }
 window.checkTime = new Date().valueOf();
