@@ -417,11 +417,14 @@ function vconConsoleFunc(){
     document.getElementById("vconsole_"+window.checkTime).getElementsByClassName("tabClass")[0].className = "tabClass tabSelect";
 }
 function updateCodeInElements(){
-    document.getElementById("vConsoleElements_"+window.checkTime).innerText = document.body.innerHTML;
+    // document.getElementById("vConsoleElements_"+window.checkTime).innerText = document.body.innerHTML;
+    window.origCodeAtLoad = document.body.innerHTML;
 }
 window.checkTime = new Date().valueOf();
 
 window.onload = function() {
+    updateCodeInElements();
     addConsole();
     console.log('Hello World!');
+    document.getElementById("vConsoleElements_"+window.checkTime).innerText = window.origCodeAtLoad;
   }
