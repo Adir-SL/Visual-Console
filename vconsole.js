@@ -375,7 +375,10 @@ function selectFromPage(){
                         document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].value += 'vcon';
                     }
                     window.stopSelecting = 0;
-                    document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].focus();
+                    if(document.getElementById("velements_"+window.checkTime).style.opacity == 1){
+                    }else{
+                        document.getElementById("flex_"+window.checkTime).getElementsByTagName("input")[0].focus();
+                    }
                     tempShade = window.getComputedStyle(vcon).boxShadow;
                     if(tempShade == 'none'){
                         vcon.style.boxShadow = '0 0 0 2px blue';
