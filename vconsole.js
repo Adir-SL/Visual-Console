@@ -224,7 +224,7 @@ function addConsole(){
     //Console CSS - Mobile
     const mobileStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
     mobileStyles("@media only screen and (max-width: 990px) {#vconsole_"+window.checkTime+", #velements_"+window.checkTime+"{ width:calc(100% - 48px); max-width:calc(100% - 48px); } "+"#vbutton"+window.checkTime+"{ right:20px; top:20px; }"+"#vconsole_"+window.checkTime+" + .flexDiv{ width:calc(100% - 48px); }"+"}")
-    
+
     //Links CSS
     const LinkStyles = s =>(d=>{d.head.appendChild(d.createElement("style")).innerHTML=s})(document);
     LinkStyles("#vconsole_"+window.checkTime+" .tabClass, "+"#velements_"+window.checkTime+" .tabClass{ filter:none; background-color:#ffffff; color:#999999; font-weight:normal; padding: 0 4px; border-bottom:none; flex-grow:1; margin-right:8px;cursor:pointer; }"+"#vconsole_"+window.checkTime+" .tabClass:hover{ opacity:.8; }")
@@ -421,14 +421,14 @@ function updateCodeInElements(){
     window.origCodeAtLoad = document.body.innerHTML;
 }
 function searchForCode(){
-    updateCodeInElements();
+    // updateCodeInElements();
     window.origPageSource = window.origCodeAtLoad;
     
-    window.newPageSource = window.origPageSource.slice(0,window.origPageSource.indexOf(vcon.outerHTML));
+    window.newPageSource = window.origPageSource.slice(0,window.origPageSource.indexOf(vcon.innerHTML));
     window.newPageSource += "<selected-text-start-please>";
-    window.newPageSource += vcon.outerHTML.toString();
+    window.newPageSource += vcon.innerHTML.toString();
     window.newPageSource += "<selected-text-end-please>";
-    window.newPageSource += window.origPageSource.slice(window.origPageSource.indexOf(vcon.outerHTML)+vcon.outerHTML.length, window.origPageSource.length);
+    window.newPageSource += window.origPageSource.slice(window.origPageSource.indexOf(vcon.innerHTML)+vcon.innerHTML.length, window.origPageSource.length);
 
     document.getElementById("vConsoleElements_"+window.checkTime).innerText = window.newPageSource;
     document.getElementById("vConsoleElements_"+window.checkTime).innerHTML = document.getElementById("vConsoleElements_"+window.checkTime).innerHTML.replace(/&lt;selected-text-start-please&gt;/g, "<span title='vcon variable'>");
