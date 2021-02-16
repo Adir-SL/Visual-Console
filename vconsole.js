@@ -395,6 +395,7 @@ function selectFromPage(){
             }
         });
     }
+    //document.styleSheets - to show all the styles on selected object.
 }
 function vconElemFunc(){
     document.getElementById("velements_"+window.checkTime).style.transform = "translateX(0) scaleY(1)";
