@@ -1,5 +1,8 @@
 # Visual Console
-This should be used for debugging purposes only
+This should be used for debugging purposes only,
+see a demo right here:
+https://adir-sl.github.io/Visual-Console
+
 ## Install
 To add Visual Console to your project, add this line to any page you want the Console to appear:
 ```
