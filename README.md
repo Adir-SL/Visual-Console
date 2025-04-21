@@ -5,7 +5,7 @@ see a demo right here:
 https://adir-sl.github.io/Visual-Console
 
 ## Install
-To add Visual Console to your project, add this line to any page you want the Console to appear:
+To add Visual Console to your project, add this line to any page you want the Console to appear (preferably in the `body` section):
 ```
 <script src="https://adir-sl.github.io/Visual-Console/vconsole.js"></script>
 ```
